@@ -1,4 +1,4 @@
-const Employee = require("./lib/Employee");
+const Employee = require("../lib/Employee.js");
 
 describe("Employee", () => {
     describe("Initialization", () => {
@@ -7,19 +7,43 @@ describe("Employee", () => {
   
         expect(typeof obj).toEqual("object");
       });
+      it("should return employee information", () => {
+        const name = "moses";
+        const id = 2;
+        const title = "dudeman";
+        const email = "dude@email.com";
+
+        const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
+        const obj = new Employee(name, id, title, email);
   
-    //   it("should set 'number' when created", () => {
-    //     const num = 108;
+        expect(obj).toEqual(employeInfo);
+      });
+    });
+    describe("getName", () => {
+      it("should the persons name", () => {
+        const name = "moses";
+        const id = 2;
+        const title = "dudeman";
+        const email = "dude@email.com";
+
+        const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
+        const obj = new Employee(name, id, title, email).getName();
   
-    //     const obj = new Arithmetic(num);
+        expect(obj).toEqual(name);
+      });
+    });
+    describe("getName", () => {
+      it("should the persons name", () => {
+        const role = "Employee";
+        const name = "moses";
+        const id = 2;
+        const title = "dudeman";
+        const email = "dude@email.com";
+
+        const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
+        const obj = new Employee(name, id, title, email).getRole();
   
-    //     expect(obj.number).toEqual(num);
-    //   });
-  
-    //   it("should default 'number' to 0", () => {
-    //     const obj = new Arithmetic();
-  
-    //     expect(obj.number).toEqual(0);
-    //   });
+        expect(obj).toEqual(role);
+      });
     });
 });
