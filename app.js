@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Employee = require("./lib/Employee")
 
 //one approach for asking team member info
 const collectInputs = async (inputs = []) => {
