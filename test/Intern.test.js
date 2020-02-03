@@ -1,20 +1,20 @@
-const Employee = require("../lib/Employee.js");
+const Intern = require("../lib/Intern");
 
-describe("Employee", () => {
+describe("Intern", () => {
     describe("Initialization", () => {
       it("should return an object", () => {
-        const obj = new Employee();
+        const obj = new Intern();
   
         expect(typeof obj).toEqual("object");
       });
-      it("should return employee information", () => {
+      it("should return Intern information", () => {
         const name = "moses";
         const id = 2;
         const title = "dudeman";
         const email = "dude@email.com";
 
         const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
-        const obj = new Employee(name, id, title, email);
+        const obj = new Intern(name, id, title, email);
   
         expect(obj).toEqual(employeInfo);
       });
@@ -27,21 +27,21 @@ describe("Employee", () => {
         const email = "dude@email.com";
 
         const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
-        const obj = new Employee(name, id, title, email).getName();
+        const obj = new Intern(name, id, title, email).getName();
   
         expect(obj).toEqual(name);
       });
     });
     describe("getRole", () => {
-      it("should the persons role", () => {
-        const role = "Employee";
+      it("should the persons name", () => {
+        const role = "Intern";
         const name = "moses";
         const id = 2;
         const title = "dudeman";
         const email = "dude@email.com";
 
         const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
-        const obj = new Employee(name, id, title, email).getRole();
+        const obj = new Intern(name, id, title, email).getRole();
   
         expect(obj).toEqual(role);
       });
@@ -55,9 +55,24 @@ describe("Employee", () => {
         const email = "dude@email.com";
 
         const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com"};
-        const obj = new Employee(name, id, title, email).getEmail();
+        const obj = new Intern(name, id, title, email).getEmail();
   
         expect(obj).toEqual(testemail);
+      });
+    });
+    describe("getSchool", () => {
+      it("should the persons email", () => {
+        const testSchool = "Rutgers";
+        const name = "moses";
+        const id = 2;
+        const title = "dudeman";
+        const email = "dude@email.com";
+        const gitSchool = "Rutgers"
+
+        const employeInfo = {name : "moses", id : 2, title : "dudeman", email : "dude@email.com", gitName: "mjpalacios25"};
+        const obj = new Intern(name, id, title, email, gitSchool).getSchool();
+  
+        expect(obj).toEqual(testSchool);
       });
     });
 });
